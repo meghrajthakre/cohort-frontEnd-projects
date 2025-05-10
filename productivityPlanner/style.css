@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+:root {
+    --primary-color: #fff;
+    --secondary-color: #1DCD9F;
+    --background-color: #000000;
+    --background-2-color: #202020;
+    --text-color: #1DCD9F;
+
+}
+
+body,
+html {
+    font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    height: 60px;
+    background-color: var(--secondary-color);
+    position: fixed;
+    display: none;
+}
+
+.allelems {
+    background: var(--secondary-color);
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    position: absolute;
+}
+
+section .elem {
+    background: red;
+    width: 250px;
+    height: 300px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.elem:active {
+    scale: 0.95;
+}
+
+.elem img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+
+}
+
+.elem h2 {
+    position: absolute;
+    bottom: 4%;
+    right: 4%;
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.allFullelems {
+    background: var(--secondary-color);
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    display: none;
+    position: absolute;
+}
+
+.back {
+    background: var(--background-color);
+    padding: 7px 15px;
+    border-radius: 10px;
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    position: absolute;
+    right: 2%;
+    top: 6%;
+}
+
+.back:hover {
+    background: var(--primary-color);
+    color: var(--background-color);
+}
+
+.todo-elem {
+    background: var(--background-color);
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+
+}
+
+.todo-elem .todo-bar {
+    background: var(--background-2-color);
+    width: 100%;
+    height: 600px;
+    margin: 10px auto;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.todo-elem .todo-bar .todo-left {
+    width: 25%;
+    height: 550px;
+    border-radius: 10px;
+    border: 1px solid black;
+
+}
+
+.todo-elem .todo-bar .todo-right {
+    background: var(--background-color);
+    width: 65%;
+    height: 550px;
+    border-radius: 10px;
+    overflow: auto;
+
+
+}
+
+.input-text {
+    background: var(--background-color);
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.input-text input {
+    border-radius: 10px;
+    width: 90%;
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: var(--background-2-color);
+    margin: 20px 20px;
+    color: var(--text-color);
+}
+
+#important {
+    transform: scale(2);
+    margin: 10px;
+}
+
+.input-text textarea {
+    border-radius: 10px;
+    width: 90%;
+    color: var(--primary-color);
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background: var(--background-2-color);
+    margin: 20px 20px;
+    color: var(--text-color);
+}
+
+.input-mark-imp {
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 200px;
+    font-size: 20px;
+}
+
+.add-task {
+    background: var(--background-2-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+    width: 90%;
+    margin: 50px 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.add-task:hover {
+    background: var(--text-color);
+    color: var(--primary-color);
+}
+
+
+
+.todo-elem .todo-bar .todo-right .todo-list .items-bar {
+    background: var(--background-2-color);
+    width: 92%;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.todo-elem .todo-bar .todo-right .todo-list .items-bar .mark-button {
+    background: var(--text-color);
+    color: var(--background-color);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 400;
+}
+
+.todo-elem .todo-bar .todo-right .todo-list .items-bar h3 {
+    font-weight: 400;
+}
+
+.mark-button:hover {
+    background: var(--text-color);
+    color: var(--primary-color);
+}
+
+
+
+.imp.true {
+    opacity: 1;
+}
+
+.imp.false {
+    color: var(--text-color);
+    opacity: 0;
+}
