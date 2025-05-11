@@ -253,3 +253,52 @@ section .elem {
     color: var(--text-color);
     opacity: 0;
 }
+
+/* daily-panner-full-page */
+.dailyPlanner {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.daily-panner-full-page {
+    width: 100%;
+    height: 90%;
+    display: block;
+    background: var(--background-2-color);
+    margin-top: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    overflow: auto;
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.daily-time {
+    width: 49%;
+    background: var(--background-color);
+    border-radius: 10px;
+    position: relative;
+    margin-bottom: 10px;
+
+}
+
+.daily-time input {
+    width: 100%;
+    border-radius: 10px;
+    background: var(--background-color);
+    outline: none;
+    border: none;
+    color: var(--text-color);
+    padding: 30px;
+    font-size: 20px;
+}
+
+.daily-time h3 {
+    position: absolute;
+    font-size: 16px;
+    left: 3%;
+    top: 5%;
+
+}
