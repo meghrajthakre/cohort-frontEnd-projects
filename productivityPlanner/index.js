@@ -112,3 +112,27 @@ function dailyPlanner() {
 }
 
 dailyPlanner();
+
+// motivational page
+// http://api.quotable.io/random
+function motivation() {
+  let motivationQuote = document.querySelector(".motivation-1 h2");
+  let motivationAthur = document.querySelector(".motivation-1 h5");
+
+  async function fetchApi() {
+    let response = await fetch(" http://api.quotable.io/random");
+    let data = await response.json();
+
+    motivationQuote.innerHTML = "'' " + data.content + "'' ";
+    motivationAthur.innerHTML = "-" + data.author;
+  }
+  fetchApi();
+  let refreshBtn = document.querySelector(".refresh-btn");
+
+  refreshBtn.addEventListener("click", () => {
+    fetchApi();
+    console.log("clickwd");
+  });
+}
+
+motivation();
