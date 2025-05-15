@@ -136,3 +136,76 @@ function motivation() {
 }
 
 motivation();
+
+// pomodoroTime
+
+function pomodoroTimer() {
+  let timer = document.querySelector(".pomodo-body h1");
+  let starBtn = document.querySelector(".pomo-start");
+  let resetBtn = document.querySelector(".pomo-reset");
+  let stopBtn = document.querySelector(".pomo-stop");
+  let clearTime = null;
+  let totalSecond = 25 * 60;
+
+  function updateTime() {
+    let minute = Math.floor(totalSecond / 60);
+    let second = totalSecond % 60;
+
+    timer.innerHTML = `${String(minute).padStart(2, "0")}: ${String(
+      second
+    ).padStart(2, "0")}`;
+  }
+
+  function starTime() {
+    clearTime = setInterval(() => {
+      if (totalSecond > 0) {
+        totalSecond--;
+        updateTime();
+      } else {
+        clearTimer();
+      }
+    }, 1000);
+  }
+
+  function clearTimer() {
+    clearInterval(clearTime);
+  }
+
+  function resetTimer() {
+    totalSecond = 25 * 60;
+    updateTime();
+  }
+
+  starBtn.addEventListener("click", starTime);
+  stopBtn.addEventListener("click", clearTimer);
+  resetBtn.addEventListener("click", resetTimer);
+
+  updateTime();
+}
+
+function fetchWeather() {
+  async function fetchData() {
+    let divTemp = document.querySelector(".div-temp .condition");
+    let city = document.querySelector(".div-temp .city");
+    let tempreture = document.querySelector(".div-temp .tempreture");
+    let humidity = document.querySelector(".div-temp .humidity");
+    let response = await fetch(
+      "https://api.weatherstack.com/current?access_key=8a787f7bf13035ea62af9f50e4321608&query=wani"
+    );
+
+    let data = await response.json();
+    console.log(data);
+
+    divTemp.innerHTML =
+      " Weather Conditions : " + data.current.weather_descriptions;
+
+    city.innerHTML = "City: " + data.location.name;
+
+    tempreture.innerHTML = "temperature : " + data.current.temperature;
+    humidity.innerHTML = "Humidity : " + data.current.humidity;
+  }
+
+  fetchData();
+}
+
+fetchWeather();

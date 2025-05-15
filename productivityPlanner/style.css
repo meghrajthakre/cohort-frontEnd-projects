@@ -19,19 +19,56 @@ html {
     font-family: 'Poppins', sans-serif;
     height: 100%;
     width: 100%;
+    background-color: var(--background-color);
 }
 
 nav {
     width: 100%;
-    height: 60px;
-    background-color: var(--secondary-color);
-    position: fixed;
-    display: none;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* padding: 40px; */
+}
+
+nav h1 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+nav i {
+    font-size: 35px;
+    cursor: pointer;
+}
+
+.temp {
+    width: 95%;
+    height: 40%;
+    margin: 15px auto;
+    padding: 30px;
+    background: var(--background-2-color);
+    border-radius: 10px
+}
+
+.div-temp {
+    color: var(--text-color);
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+}
+
+.div-temp h2 {
+    font-weight: 400;
+
+}
+
+.div-temp h3 {
+    font-weight: 400;
+    margin-left: 60px;
+    font-size: 22px;
 }
 
 .allelems {
-    background: var(--secondary-color);
-    height: 100%;
     width: 100%;
     padding: 20px;
     display: flex;
@@ -41,7 +78,6 @@ nav {
 }
 
 section .elem {
-    background: red;
     width: 250px;
     height: 300px;
     border-radius: 10px;
@@ -111,7 +147,7 @@ section .elem {
 }
 
 .todo-elem .todo-bar {
-    background: var(--background-2-color);
+    background-color: var(--background-2-color);
     width: 100%;
     height: 600px;
     margin: 10px auto;
@@ -363,4 +399,52 @@ section .elem {
     background: #1DCD9F;
     color: #000000;
     margin: 10px auto;
+}
+
+/* pomodoro-fulll-page */
+
+
+
+.pomodoro-fulll-page {
+    background: var(--background-color);
+    width: 100%;
+    height: 100%;
+    color: var(--text-color);
+
+}
+
+.pomodo-body {
+    width: 50%;
+    background: var(--background-2-color);
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+}
+
+.pomodo-body h1 {
+    font-size: 100px;
+
+}
+
+.pomo-buttons button {
+    padding: 10px 15px;
+    border-radius: 10px;
+    outline: none;
+    background: var(--secondary-color);
+    color: var(--background-color);
+    font-size: 22px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+}
+
+.pomo-buttons button:active {
+    scale: 0.95;
 }
