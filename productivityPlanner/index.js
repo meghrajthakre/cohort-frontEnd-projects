@@ -183,6 +183,7 @@ function pomodoroTimer() {
   updateTime();
 }
 
+pomodoroTimer();
 function fetchWeather() {
   async function fetchData() {
     let divTemp = document.querySelector(".div-temp .condition");
@@ -194,7 +195,6 @@ function fetchWeather() {
     );
 
     let data = await response.json();
-    console.log(data);
 
     divTemp.innerHTML =
       " Weather Conditions : " + data.current.weather_descriptions;
@@ -206,6 +206,30 @@ function fetchWeather() {
   }
 
   fetchData();
+
+  function fetchingDate() {
+    let dates = document.querySelector(".div-date h1");
+    let time = document.querySelector(".div-date h2");
+    let date = new Date();
+
+    let day = date.getHours();
+    let month = String(date.getMonth() + 1).padStart(2, "0");
+    let year = date.getFullYear();
+    let hour = String(date.getHours()).padStart(2, "0");
+    let minuts = String(date.getMinutes()).padStart(2, "0");
+    let seconds = String(date.getSeconds()).padStart(2, "0");
+    let hours = hour % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const ampm = hours <= 12 ? "PM" : "AM";
+    dates.innerHTML = `${day}- ${month}-${year}`;
+    time.innerHTML = `${hours}:${minuts}:${seconds} ${ampm}`;
+  }
+
+  setInterval(() => {
+    fetchingDate();
+  }, 1000);
+
+  fetchingDate();
 }
 
 fetchWeather();

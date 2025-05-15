@@ -47,7 +47,10 @@ nav i {
     margin: 15px auto;
     padding: 30px;
     background: var(--background-2-color);
-    border-radius: 10px
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
 }
 
 .div-temp {
@@ -55,6 +58,10 @@ nav i {
     display: flex;
     gap: 30px;
     flex-direction: column;
+}
+
+.div-date {
+    font-size: 22px;
 }
 
 .div-temp h2 {
@@ -86,6 +93,7 @@ section .elem {
     margin: 0 auto;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
+
 }
 
 .elem:active {
@@ -107,6 +115,8 @@ section .elem {
     color: var(--primary-color);
     font-size: 20px;
     font-weight: 500;
+    color: var(--text-color);
+
 }
 
 .allFullelems {
